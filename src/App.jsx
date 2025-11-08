@@ -1,28 +1,42 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import About from './components/About';
+import Tokenomics from './components/Tokenomics';
+import RoadmapCommunity from './components/RoadmapCommunity';
+import FaqFooter from './components/FaqFooter';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="font-inter text-slate-900">
+      <MetaTags />
+      <Hero />
+      <About />
+      <Tokenomics />
+      <RoadmapCommunity />
+      <FaqFooter />
     </div>
-  )
+  );
 }
 
-export default App
+function MetaTags() {
+  return (
+    <>
+      <title>PepeTürk ($TURK) — Meme Coin. Turkish Style. Global Impact.</title>
+      <meta name="description" content="PepeTürk is a playful yet sleek Turkish-flavored meme coin. Community-first, culture-infused, built for virality." />
+      <meta name="theme-color" content="#00b5ad" />
+
+      {/* OpenGraph */}
+      <meta property="og:title" content="PepeTürk ($TURK) — Meme Coin. Turkish Style. Global Impact." />
+      <meta property="og:description" content="Community-first meme coin with Turkish vibes, smooth animations and real meme power." />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1600&auto=format&fit=crop" />
+
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="PepeTürk ($TURK) — Meme Coin. Turkish Style. Global Impact." />
+      <meta name="twitter:description" content="A cultural homage to Pepe with a fez and a grin. Join the $TURK movement." />
+      <meta name="twitter:image" content="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1600&auto=format&fit=crop" />
+    </>
+  );
+}
+
+export default App;
